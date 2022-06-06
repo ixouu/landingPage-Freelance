@@ -4,6 +4,7 @@ const legends = document.querySelectorAll('.slider--legend');
 const imgs = document.querySelectorAll ('.portfolio--slider__imgs img');
 const indexes = document.querySelectorAll ('.sliderIndex');
 const navBar = document.querySelector('nav');
+const navMenu = document.querySelector('.nav--menu');
 const hero = document.querySelector('#hero');
 const services = document.querySelector('#services');
 const portfolio = document.querySelector('#portfolio');
@@ -21,6 +22,7 @@ const emailInput = document.querySelector('#emailInput');
 const messageInput = document.querySelector('#messageInput');
 const NameRequiredSpan = document.querySelector('.nameRequired');
 const emailRequiredSpan = document.querySelector('.emailRequired');
+
 const options = {
     root : null,
     rootMargin: "0px",
@@ -147,8 +149,10 @@ observer6.observe(form);
 function fixedNav() {
   if (window.scrollY >= servicesTop) {    
     navBar.classList.add('isFixed');
+    navMenu.classList.add('navTransition');
   } else if(window.scrollY <= heroTop){
-    navBar.classList.remove('isFixed');    
+    navBar.classList.remove('isFixed');
+    navMenu.classList.remove('navTransition');
   }
 }
 
@@ -170,6 +174,7 @@ nameInput.addEventListener('invalid', ()=>{
     }
 });
 emailInput.addEventListener('input', ()=>{
+    emailInput.setCustomValidity('');
     emailInput.checkValidity();
     emailInput.reportValidity();
     if (emailInput.reportValidity() == true){
@@ -179,6 +184,9 @@ emailInput.addEventListener('input', ()=>{
 
 emailInput.addEventListener('invalid', ()=>{
     if(emailInput.value === ""){
+        emailInput.setCustomValidity('Veuillez écrire votre adresse mail');
         emailRequiredSpan.textContent= "Veuillez rentrez un e-mail valide.";
+    }else{
+        emailInput.setCustomValidity('L\'adresse mail que vous avez écrite n\'est pas valide.')
     }
 });
