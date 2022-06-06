@@ -16,12 +16,25 @@ const navMenuPortfolio = document.querySelector('.nav--menu__Portfolio');
 const navMenuCompetences = document.querySelector('.nav--menu__Competences');
 const navMenuTestimonial = document.querySelector('.nav--menu__Testimonial');
 const navMenuContact = document.querySelector('.nav--menu__Contact');
-
+const nameInput = document.querySelector('#nameInput');
+const emailInput = document.querySelector('#emailInput');
+const messageInput = document.querySelector('#messageInput');
+const NameRequiredSpan = document.querySelector('.nameRequired');
+const emailRequiredSpan = document.querySelector('.emailRequired');
+const options = {
+    root : null,
+    rootMargin: "0px",
+    threhold: 1
+};
 
 let index = 0;
+let servicesTop = services.offsetTop;
+let heroTop = hero.offsetTop;
 
-btnNext.addEventListener('click', nextSlide);
 const interval = setInterval(nextSlide, 4000);
+btnNext.addEventListener('click', nextSlide);
+btnPrevious.addEventListener('click', previousSlide);
+window.addEventListener('scroll', fixedNav);
 
 function nextSlide (){
     if(index < 2){
@@ -46,8 +59,6 @@ function nextSlide (){
     }
 };
 
-btnPrevious.addEventListener('click', previousSlide);
-
 function previousSlide (){
     if(index > 0){
         imgs[index].classList.remove('img--isActive');
@@ -71,18 +82,9 @@ function previousSlide (){
     }
 };
 
-const options = {
-    root : null,
-    rootMargin: "0px",
-    threhold: 1
-}
-
-
-
 const observer = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
-        console.log(entries);
         navMenuAcceuil.classList.add('isVisible');
     }else{
         navMenuAcceuil.classList.remove('isVisible');
@@ -92,7 +94,6 @@ const observer = new IntersectionObserver(entries =>{
 const observer2 = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
-        console.log(entries);
         navMenuServices.classList.add('isVisible');
     }else{
         navMenuServices.classList.remove('isVisible');
@@ -102,7 +103,6 @@ const observer2 = new IntersectionObserver(entries =>{
 const observer3 = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
-        console.log(entries);
         navMenuPortfolio.classList.add('isVisible');
     }else{
         navMenuPortfolio.classList.remove('isVisible');
@@ -112,7 +112,6 @@ const observer3 = new IntersectionObserver(entries =>{
 const observer4 = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
-        console.log(entries);
         navMenuCompetences.classList.add('isVisible');
     }else{
         navMenuCompetences.classList.remove('isVisible');
@@ -122,7 +121,6 @@ const observer4 = new IntersectionObserver(entries =>{
 const observer5 = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
-        console.log(entries);
         navMenuTestimonial.classList.add('isVisible');
     }else{
         navMenuTestimonial.classList.remove('isVisible');
@@ -132,7 +130,6 @@ const observer5 = new IntersectionObserver(entries =>{
 const observer6 = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
-        console.log(entries);
         navMenuContact.classList.add('isVisible');
     }else{
         navMenuContact.classList.remove('isVisible');
@@ -140,16 +137,12 @@ const observer6 = new IntersectionObserver(entries =>{
     });
 });
 
-
 observer.observe(hero);
 observer2.observe(services);
 observer3.observe(portfolio);
 observer4.observe(competences);
 observer5.observe(testimonial);
 observer6.observe(form);
-
-let servicesTop = services.offsetTop;
-let heroTop = hero.offsetTop;
 
 function fixedNav() {
   if (window.scrollY >= servicesTop) {    
@@ -159,5 +152,33 @@ function fixedNav() {
   }
 }
 
-window.addEventListener('scroll', fixedNav);
+nameInput.addEventListener('input', ()=>{
+    nameInput.setCustomValidity('');
+    nameInput.checkValidity();
+    nameInput.reportValidity();
+    if (nameInput.reportValidity() == true){
+        NameRequiredSpan.textContent= "";
+    }
+});
 
+nameInput.addEventListener('invalid', ()=>{
+    if(nameInput.value === ""){
+        nameInput.setCustomValidity('Veuillez saisir votre nom.');
+        NameRequiredSpan.textContent= "Veuillez saisir votre nom.";
+    } else{
+        nameInput.setCustomValidity('Vous n\' avez pas saisi correctement votre nom.');
+    }
+});
+emailInput.addEventListener('input', ()=>{
+    emailInput.checkValidity();
+    emailInput.reportValidity();
+    if (emailInput.reportValidity() == true){
+        emailRequiredSpan.textContent= "";
+    }
+});
+
+emailInput.addEventListener('invalid', ()=>{
+    if(emailInput.value === ""){
+        emailRequiredSpan.textContent= "Veuillez rentrez un e-mail valide.";
+    }
+});

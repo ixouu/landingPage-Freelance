@@ -1,5 +1,3 @@
-https://demo.cocobasic.com/kaven-wp/ theme inspiration
-
 Nav => Acceuil / Services / Portfolio / Temoignages / A propos / Contact
 
 Hero
