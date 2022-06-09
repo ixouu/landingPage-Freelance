@@ -1,0 +1,132 @@
+//services
+#services{
+    width: 100%;
+    min-height: 100vh;
+    background-color: $colorBackground-1 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    h2{
+        padding-top: 15vh;
+        position: absolute;
+        left: 25vw;
+        transition: color .3s ease-out;
+        &:hover{
+           color: $colorMediumGreen; 
+        } 
+    }
+}
+.services--logos{
+    display: flex;
+    justify-content: center;
+    padding-top: 25vh;
+    width: 80vw;
+    flex-wrap: wrap;
+    .logoContent{
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    p{
+        text-align: center;
+        font-family: 'Mulish', sans-serif;
+        font-size: 20px;
+    }
+    img{
+        width : 120px;
+    }
+}
+.services--description{
+    padding-top: 5vh;
+    p{
+        max-width: 40vw;
+        font-size: 25px;
+        color : $colorText_2;
+    }
+}
+.services--shortDescription{
+    display: flex;
+    padding-bottom: 10vh;
+    margin: auto;
+    .shortDescription--containerWrapper{
+        width: 100%;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow-x: hidden;
+        .services--shortDescription__container{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            width: 10vw;
+            min-width: 250px;
+            height: 350px;
+            margin-top: 7vh;
+            .bigNumber{
+                color : $colorText_2;
+                font-size: 140px;
+                position: absolute;
+                top: -230px;
+                left: -60px;
+                font-family: 'Mulish', sans-serif;
+                font-weight: 900;
+            }
+            h4, p{
+                padding: 0 20px;
+                overflow: scroll;
+            }
+            h4{
+                padding-top: 25%;
+                font-family: 'Mulish', sans-serif;
+            }
+        }
+        .container1{
+            background-color: $colorDarkGreen;
+        }
+        .container2{
+            background-color: $colorMediumGreen;
+        }
+        .container3{
+            background-color: $colorLightGreen;
+        }
+        .container4{
+            background-color: $colorDarkGreen;
+        }
+    }
+    
+}
+@media screen and (max-width : 599px){
+    #services h2{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .services--description p{
+        max-width: 80vw;
+        padding: 0 20px;
+        font-size: 18px;
+        word-spacing: .1rem;
+        text-align: justify;
+    }
+    .services--shortDescription{
+        flex-direction: column;
+    }
+    .services--logos{
+        width: 100%;
+    }
+    .logoContent{
+        flex-direction: row;
+        padding: 0 10px;
+        width: 50%;
+        p{
+            font-size: 14px;
+            text-align: start;
+        }
+        img{
+        width: 60px;
+        }
+    }  
+}

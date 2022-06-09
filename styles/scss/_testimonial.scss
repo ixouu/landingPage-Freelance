@@ -1,0 +1,151 @@
+// Testimonial
+#testimonial{
+    width: 100%;
+    min-height: 50vh;
+    background-color: $colorBackground_2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    h2{
+        position: absolute;
+        top: 10vh;
+        left: 25vw;
+        transition: color .3s ease-out;
+        &:hover{
+           color: $colorMediumGreen; 
+        } 
+    }
+    p{
+        padding-top: 20vh;
+        padding-left: 5vw ;
+        font-size: 25px;
+        max-width: 40vw;
+        text-align: center;
+        padding-bottom: 5vh;
+    }
+    .testimonial--quote{
+        margin: 0 20vw;
+        margin-top: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        .testimonial--quote1, .testimonial--quote2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px; 
+            width: 40%;
+            min-height: 30vh;
+            .quote--link{
+                padding-left: 5vw;
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: content;
+                align-items: center;
+            }   
+            h4{
+                font-family: 'Mulish', sans-serif;
+                font-weight: 900;
+                font-size: 25px;
+                position: relative;
+                text-align: center;
+                width: 80%;
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 3vw;
+                    position: absolute;
+                    border-bottom: 1px solid $colorDarkGreen;
+                    bottom: -20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            p{
+                max-width: 20vw;
+                font-style: italic;
+                line-height: 1.5em;
+                font-size: 20px;
+                display: block;
+                position: relative;
+                padding: 0;
+                &::before{
+                    content: '"';
+                    display: block;
+                    font-size: 40px;
+                    position: absolute;
+                    top: -20px;
+                    left: -30px;
+                    font-family: Trebuchet;
+                    font-weight: 900;
+                }
+                &::after{
+                    content: '"';
+                    display: block;
+                    font-size: 40px;
+                    position: absolute;
+                    bottom: -20px;
+                    right: -20px;
+                    font-family: Trebuchet;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}
+.mockup{
+    position: absolute;
+    top: -133px;
+    right: 0;
+    padding: 0 10vw;
+}
+@media screen and (max-width : 599px) {
+    .mockup{
+        position: absolute;
+        right: 0;
+        width: 250px;
+        height: auto;
+    }
+
+    #testimonial{ 
+        p{
+        font-size: 18px;
+        width: 80vw;
+        max-width: 80vw;
+        word-spacing: .1rem;
+        text-align: justify;
+        padding-left: 0;
+        }
+        h2{
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        .testimonial--quote{
+            flex-direction: column;
+            width: 100vw;
+            align-items: flex-start;
+            p{  
+                width: 100vw;
+                max-width: 100vw;
+            }
+            .testimonial--quote1, .testimonial--quote2{
+                width: 100%;
+                p{
+                    max-width: 80vw;
+                    word-spacing: .1rem;
+                }
+                h4{
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
