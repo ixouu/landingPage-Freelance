@@ -19,6 +19,9 @@ const navMenuContact = document.querySelector('.nav--menu__Contact');
 const form = document.querySelector('form');
 const iconMobile = document.querySelector('.mobile--menu__icon');
 const mobileMenu = document.querySelector('.mobile--nav');
+const logo = document.querySelector('.nav--logo');
+const scrollBar = document.querySelector('.scrollIndicator');
+const body = document.querySelector("body")
 
 
 const options = {
@@ -148,18 +151,33 @@ function fixedNav() {
   if (window.scrollY >= servicesTop) {    
     navBar.classList.add('isFixed');
     navMenu.classList.add('navTransition');
+    logo.style.opacity = "0"
   } else if(window.scrollY <= heroTop){
     navBar.classList.remove('isFixed');
     navMenu.classList.remove('navTransition');
+    logo.style.opacity = "1"
   }
 }
 
-//iconMobileIcontoggle
-// function toggleMobileMenu(menu){
-//     menu.classList.toggle('open');
-// }
 iconMobile.addEventListener('click', () =>{
     iconMobile.classList.toggle('open');
     mobileMenu.classList.toggle('open')
 });
 
+const observerBar = new IntersectionObserver(handleIntersect).observe(body);
+console.log(observerBar);
+function handleIntersect(entries){
+    const el = entries[0];
+    if (el.isIntersecting) {
+        window.addEventListener("scroll", indicatorAnimation)
+    }else if (!el.isIntersecting){
+        window.removeEventListener('scroll', indicatorAnimation)
+    }
+};
+
+function indicatorAnimation(){
+    if (window.scrollY > body.offsetTop){
+        const percent =(( window.scrollY - body.offsetTop) / body.scrollHeight * 100).toFixed(2);
+        scrollBar.style.transform = `scaleX(${percent}%)`
+    }
+}

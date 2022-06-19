@@ -2,3 +2,14 @@
     font-family: 'Mulish', sans-serif;
     font-weight: 900;
 };
+@mixin tablettes-only { 
+    @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width : map-get($breakpoints, desktop)) { 
+      @content 
+    } 
+  };
+
+@mixin mobile-only { 
+    @media screen and (max-width : map-get($breakpoints, mobile)) { 
+      @content 
+    } 
+  };

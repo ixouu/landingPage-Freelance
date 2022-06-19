@@ -1,0 +1,23 @@
+{
+  "name": "landingpagejulien",
+  "version": "1.0.0",
+  "description": "Nav => Acceuil / Services / Portfolio / Temoignages / A propos / Contact",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./styles/scss/style.scss:./styles/style.css",
+    "prefix": "postcss ./styles/style.css --use autoprefixer -d./styles/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ixouu/landingPage-dev-Front-End-Julien-Chanon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ixouu/landingPage-dev-Front-End-Julien-Chanon/issues"
+  },
+  "homepage": "https://github.com/ixouu/landingPage-dev-Front-End-Julien-Chanon#readme",
+  "browsersList" : [
+    "defaults"
+  ]
+}

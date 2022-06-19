@@ -6,35 +6,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: center;
     position: relative;
     h2{
+        top: 15vh;
         position: absolute;
-        top: 10vh;
         left: 25vw;
         transition: color .3s ease-out;
         &:hover{
            color: $colorMediumGreen; 
         } 
+        @include mobile-only{
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100px;
+        }
     }
     h3{
         font-family: 'Mulish', sans-serif;
     }
-    .competences--paragraphs{
-        padding-left: 5vw ;
+    .competences--articles{
+        padding: 300px 0 40px 0;
         font-size: 25px;
         width: 50vw;
         text-align: center;
         padding-bottom: 5vh;
-    }
-    .competences--firstParagraph{
-        padding-top: 20vh;
+        :nth-child(1){
+            padding-bottom: 40px;
+        }
+        @include mobile-only{
+            padding: 200px 0 40px 0;
+            font-size: 18px;
+            width: 80vw;
+            margin-top: 10px;
+            word-spacing: .1rem;
+            text-align: justify;
+        }
     }
     .compentences--hardSkills{
         display: flex;
         align-items: center;
         padding-bottom: 5vh;
         flex-wrap: wrap;
+        @include mobile-only{
+            justify-content: center;
+            padding-left: 0;
+        }
+        img{
+            @include mobile-only{
+                width: 100px;
+                margin: 10px;
+            }
+        }
     }
     li{
         list-style: none;
@@ -42,12 +64,17 @@
         flex-direction: column;
         span{
             text-align: center;
+            display: inline-block;
         }
     }
     .compentences--softSkills{
         display: flex;
         flex-direction: row;
-
+        @include mobile-only{
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
     }
     .compentences--softSkills li{
         list-style: none;
@@ -56,45 +83,17 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+        @include mobile-only{
+            padding: 0;
+        }
+
         img{
             width: 100px;
             margin-right: 10px;
-        }
-    }
-}
-@media screen and (max-width: 599px) {
-    #competences{ 
-        h2{
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        text-align: center;
-        }
-        .competences--paragraphs{
-            font-size: 18px;
-            width: 80vw;
-            margin-top: 10px;
-            word-spacing: .1rem;
-            text-align: justify;
-        }
-        .compentences--hardSkills{
-            justify-content: center;
-        img{
-            width: 100px;
-        }
-        }
-        .compentences--softSkills{
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100vw;
-            .compentences--softSkills li{
-                padding: 0;
-                img{
-                    width: 75px;
-                }
+            @include mobile-only{
+                width: 75px;
             }
-            
+
         }
     }
-    
 }

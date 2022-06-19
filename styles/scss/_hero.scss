@@ -5,12 +5,19 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    @include mobile-only{
+        height: 400px;
+    }
+
     .hero--overlay{
         position: absolute;
         background-color: $colorOverlay;
         opacity: .7;
         width: 100%;
         height: 100vh;
+        @include mobile-only{
+            height: 400px;
+        }
     }
     h1{
         display: block;
@@ -21,6 +28,12 @@
         transform: translateY(-50%);
         @include fontTitle;
         opacity: 1;
+        @include mobile-only{
+            top: 20%;
+            padding: 20px;
+            left: 0;
+            transform: translateY(0);
+        }
     }  
 }
 .desktop--nav{
@@ -32,6 +45,21 @@
     position: relative;
     opacity: 1;
     transition: all 200ms ease-out;
+    @include mobile-only{
+        display: none;
+    }
+    .scrollIndicator{
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(to right, $colorLightGreen, $colorDarkGreen );
+        position: absolute;
+        display: block;
+        z-index: 4000;
+        top: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform .2s ease-out;
+    }
     .nav--logo img{
         width: 100px;
         top: 0;
@@ -62,7 +90,7 @@
     position: fixed;
     top: 0;
     background-color: $colorBlueTransparent;
-    z-index: 1000;
+    z-index: 3000;
     transition: all 200ms ease-in;
 }
 .navTransition{
@@ -75,23 +103,40 @@
     bottom: -75px;
     width: 60vw;
     min-height: 150px;
+    z-index: 2000;
+    @include mobile-only{
+        width: 100%;
+        padding: 0;
+        bottom: -100px;  
+    }
     .hero--submenu__container{
         min-width: 30vw;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include mobile-only{
+            min-width: 50vw;
+        }
         h3{
             margin-top: 40px;
             text-align: center;
             font-size: 30px;
             margin-bottom: 0;
             font-family: 'Mulish', sans-serif;
+            @include mobile-only{
+                margin-top: 20px;
+                font-size: 20px;
+            }
         }
         a{
             text-decoration: none;
             color: $colorText;
             font-size: 20px;
             text-align: center;
+            @include mobile-only{
+                margin: 15px;
+                font-size: 18px;
+            }
         }
     }
     .hero--submenu__project{
@@ -108,8 +153,14 @@
     padding : 20px;
     z-index: 2000;
     position: relative; 
+    @include mobile-only{
+        display: block;
+        position: fixed;
+    }
 }
-.mobile--menu__icon div{
+.bar1,
+.bar2,
+.bar3{
     width: 35px;
     height: 3px;
     background-color: white;
@@ -131,7 +182,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
     background-color: #F1F1F1;
     height: auto;
 }
@@ -139,41 +189,14 @@
     display: none;
     position: absolute;
     top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     height: calc(100vh - 50px);
-    width: 100%;
+    width: 100vw;
     a{
         text-decoration: none;
         color: black;
         padding: 20px;
         font-size: 20px;
-    }
-}
-
-@media screen and (max-width : 599px){
-    .hero--submenu{
-        width: 100%;
-        .hero--submenu__container h3{
-            margin-top: 20px;
-            font-size: 20px;
-        }
-        .hero--submenu__container a{
-            margin: 15px;
-            font-size: 18px;
-        }
-    }
-    #hero h1{
-        top: 20%;
-        padding: 20px;
-        left: 0;
-        transform: translateY(0%);
-    }
-    .desktop--nav, .nav--logo, .nav--menu{
-        display: none;
-    }
-    .mobile--menu__icon{
-        display: block;
     }
 
 }

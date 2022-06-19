@@ -19,6 +19,7 @@
 <header id="hero">
     <div class="hero--overlay"></div>
         <nav class="desktop--nav"role="navigation">
+            <div class="scrollIndicator"></div>
             <a class="nav--logo" href="http://"><img src="./assets/images/logo.png" alt="Logo"></a>
             <div class="nav--menu">
                 <a class="nav--menu__Acceuil isVisible"href="#">Accueil</a>
@@ -104,7 +105,7 @@
             <div class="services--shortDescription__container container3">
                 <p class="bigNumber">03</p>
                 <h4>Aide au contenu</h4>
-                <p>Que mettre en avant et comment ? Soignez votre communication pour augmenter votre ...visibilité.</p>
+                <p>Que mettre en avant et comment ? Soignez votre communication pour augmenter votre visibilité.</p>
             </div>
         </div>
         <div class="shortDescription--containerWrapper">
@@ -117,8 +118,10 @@
     </div>
 </div>
 <div id="portfolio">
+    <img class="purpCircle"src="./assets/images/svg/purpleCircle.svg" alt="Rond violet">
+    <img class="orangeCircle" src="./assets/images/svg/orangeCircle.svg" alt="Rond orange">
     <h2>PORTFOLIO</h2>
-    <p>Retrouvez ici une partie de mes réalisations. Vous y retrouverez des applications, des sites de page unique et des sites vitrines. En perpétuelle évolution, ce Portfolio est amené à évoluer alors n'hésitez pas découvrir régulièrement les nouveautés.</p>
+    <article>Retrouvez ici une partie de mes réalisations. Vous y retrouverez des applications, des sites de page unique et des sites vitrines. En perpétuelle évolution, ce Portfolio est amené à évoluer alors n'hésitez pas découvrir régulièrement les nouveautés.</article>
     <div class="portfolio--slider">
         <div class="portfolio--slider__imgs">
             <img class="img--isActive" src="./assets/images/lesrecettesdeconstancePreview.jpg" alt="Preview du blog des recettes de Constance">
@@ -126,9 +129,11 @@
             <img src="./assets/images/img3.jpg" alt="img3">
         </div>
         <div class="portfolio--slider__legends">
-            <p class="slider--legend slider--legend__isActive">Blog Patisserie</p>
-            <p class="slider--legend" >Application choisis ton thé</p>
-            <p class="slider--legend" >Gite de l'Orne</p>
+            <div class="legends">
+                <p class="slider--legend slider--legend__isActive">Blog Patisserie</p>
+                <p class="slider--legend" >Application choisis ton thé</p>
+                <p class="slider--legend" >Gite de l'Orne</p>
+            </div>
         </div>
         <div class="portfolio--slider__controls">
             <button class="button--left">
@@ -257,15 +262,17 @@
 </div>
 <div id="competences">
     <h2>MES COMPETENCES</h2>
-    <p class="competences--paragraphs competences--firstParagraph">Passionné par le développement et la création de sites, je mets à profit tout le savoir aquis pour aider les petites structures à améliorer leur image et leur <strong>visibilité</strong> en ligne.</p>
-    <p class="competences--paragraphs  competences--secondParagraph">Spécialisé dans toute la partie visible pour les utilisateurs, mon travail est de pouvoir implémenter votre vision du design à travers le code pour pouvoir le rendre accesible au plus grand nombre de visiteurs. Mon objectif est de pouvoir fournir une expérience utilisateur qui mettra en valeur votre activité.</p>
+    <ul class="competences--articles">
+    <article class="competences--paragraphs competences--firstParagraph">Passionné par le développement et la création de sites, je mets à profit tout le savoir aquis pour aider les petites structures à améliorer leur image et leur <strong>visibilité</strong> en ligne.</article>
+    <article class="competences--paragraphs  competences--secondParagraph">Spécialisé dans toute la partie visible pour les utilisateurs, mon travail est de pouvoir implémenter votre vision du design à travers le code pour pouvoir le rendre accesible au plus grand nombre de visiteurs. Mon objectif est de pouvoir fournir une expérience utilisateur qui mettra en valeur votre activité.</article>
+    </ul>
     <h3>Technologies maitrisées</h3>
     <ul class="compentences--hardSkills">
         <li><img src="./assets/images/logo-html-5-256.png" alt="Html5"><span>HTML</span></li>
         <li><img src="./assets/images/logo-css-3-256.png" alt="CSS3"><span>CSS</span></li>
         <li><img src="./assets/images/logo-javascript-icon-256.png" alt="Javascript"><span>Javascript</span></li>
         <li><img src="./assets/images/logoPhotoshop.png" alt="Photoshop"><span>Photoshop</span></li>
-        <li><img src="./assets/images/google_lighthouse_icon.png" alt="Photoshop"><span>Outil Lighthouse</span></li>
+        <li><img src="./assets/images/google_lighthouse_icon.png" alt="Photoshop"><span>Lighthouse</span></li>
     </ul>
     <h3>Un développeur à votre écoute</h3>
     <ul class="compentences--softSkills">
