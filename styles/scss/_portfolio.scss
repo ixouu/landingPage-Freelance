@@ -41,8 +41,12 @@
         position: absolute;
         left: 25vw;
         transition: color .3s ease-out;
+        @include afterBar;
         &:hover{
            color: $colorMediumGreen; 
+        } 
+        &:hover::after{
+            width: 90px;
         } 
         @include mobile-only{
             left: 50%;
@@ -88,7 +92,7 @@
         height: 30vw;
         position: absolute;
         opacity: 0;
-        transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.4s ease-out;
         @include mobile-only{
             width: 100vw;
             min-height: 75vw;
@@ -200,7 +204,11 @@
     align-items: center;
     justify-content: space-between;
     font-family: 'Mulish', sans-serif;
-    margin: 0 5vw 200px 5vw;
+    padding: 250px 400px 200px 400px;
+    width: 80%;
+    height: 600px;
+    position: relative;
+
     @include mobile-only{
         flex-direction: column;
         justify-content: center;
@@ -210,17 +218,28 @@
     }
 }
 .portfolio--cards__wrapper{
-    height: 40vh;
-    width: 33%;
-    margin: 10vh 2vw;
+    height: auto;
+    width: 20%;
+    margin: 0;
+    position: absolute;
     @include mobile-only{
         margin: 140px 0 140px 0;
         width: 100%;
     }
 }
+.card--1{
+    left: 0
+}
+.card--2{
+    left : 50%;
+    transform: translateX(-50%);
+}
+.card--3{
+    right: 0;
+}
 .card--number{
     position: absolute;
-    transition: all 200ms ease-out;
+    transition: opacity 0.4s ease-out;
     background-color: rgba(51, 51, 51, 0.671);
     width: 40px;
     height: 70px;
@@ -240,6 +259,7 @@
     justify-content: flex-start;
     position: relative;
     width: 100%;
+    transition: opacity 0.4s ease-out;
     
     img{
         max-width: 250px;
@@ -326,6 +346,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
+    transition: opacity 0.4s ease-out;
     @include mobile-only{
         opacity: 1;
         position: relative;

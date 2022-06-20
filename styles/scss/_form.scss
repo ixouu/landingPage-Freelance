@@ -9,14 +9,36 @@
     justify-content: center;
     position: relative;
     padding-bottom: 15vh;
+    .circle1{
+        position: absolute;
+        width: 300px;
+        left: -100px;
+        top: -100px;
+        transform-origin: 50% 50%;
+        transform :rotate(0);
+        animation: circlesrotate 5s linear infinite forwards;
+    }
+    .circle2{
+        position: absolute;
+        width: 300px;
+        left: -50px;
+        top: -90px;
+        transform-origin: 50% 50%;
+        transform :rotate(0);
+        animation: circlesrotate 10s linear infinite backwards 2s; 
+    }
     h2{
         position: absolute;
         top: 15vh;
         left: 25vw;
         transition: color .3s ease-out;
+        @include afterBar;
         &:hover{
            color: $colorMediumGreen; 
         }
+        &:hover::after{
+            width: 90px;
+        }   
         @include mobile-only{
             left: 50%;
             transform: translateX(-50%);
@@ -213,7 +235,7 @@
         align-items: center;
         justify-content: center;
         img{
-            width: 30px;
+            width: 80px;
         }
     }
     .contactDetails--details{
@@ -239,4 +261,13 @@
             }
         }
     }
+}
+@keyframes circlesrotate {
+    from{
+        transform: rotate(0)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+    
 }

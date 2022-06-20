@@ -22,7 +22,8 @@ const mobileMenu = document.querySelector('.mobile--nav');
 const logo = document.querySelector('.nav--logo');
 const scrollBar = document.querySelector('.scrollIndicator');
 const body = document.querySelector("body")
-
+const testimonialQuote1 = document.querySelector(".testimonial--quote1");
+const testimonialQuote2 = document.querySelector(".testimonial--quote2");
 
 const options = {
     root : null,
@@ -125,6 +126,10 @@ const observer5 = new IntersectionObserver(entries =>{
     entries.forEach(entry =>{
     if(entries[0].intersectionRatio !== 0) {
         navMenuTestimonial.classList.add('isVisible');
+        testimonialQuote1.style.opacity = "1";
+        testimonialQuote1.style.transform = "translateX(0)";
+        testimonialQuote2.style.opacity = "1";
+        testimonialQuote2.style.transform = "translateX(0)";
     }else{
         navMenuTestimonial.classList.remove('isVisible');
     }

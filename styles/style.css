@@ -52,6 +52,7 @@
   position: relative;
   opacity: 1;
   transition: all 200ms ease-out;
+  font-family: "Mulish", sans-serif;
 }
 @media screen and (max-width: 599px) {
   .desktop--nav {
@@ -129,6 +130,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: #F1F1F1;
 }
 @media screen and (max-width: 599px) {
   .hero--submenu .hero--submenu__container {
@@ -148,14 +151,13 @@
     font-size: 20px;
   }
 }
-.hero--submenu .hero--submenu__container a {
+.hero--submenu .hero--submenu__container span {
   text-decoration: none;
-  color: #F1F1F1;
   font-size: 20px;
   text-align: center;
 }
 @media screen and (max-width: 599px) {
-  .hero--submenu .hero--submenu__container a {
+  .hero--submenu .hero--submenu__container span {
     margin: 15px;
     font-size: 18px;
   }
@@ -239,14 +241,35 @@
   justify-content: flex-start;
   position: relative;
 }
+#services .cubicshapes {
+  position: absolute;
+  left: -200px;
+  top: 40%;
+  transform-origin: 50% 50%;
+  transform: rotate(0) scale(1);
+  animation: cubicRotate 40s linear infinite backwards;
+}
 #services h2 {
   top: 15vh;
   position: absolute;
   left: 25vw;
   transition: color 0.3s ease-out;
 }
+#services h2::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background-color: #2B9941;
+  bottom: -20px;
+  left: 0;
+  transition: all 0.4s ease-out;
+}
 #services h2:hover {
   color: #2B9941;
+}
+#services h2:hover::after {
+  width: 90px;
 }
 @media screen and (max-width: 599px) {
   #services h2 {
@@ -380,6 +403,17 @@
   background-color: #195926;
 }
 
+@keyframes cubicRotate {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50% {
+    transform: rotate(-180deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
+}
 #portfolio {
   width: 100%;
   min-height: 100vh;
@@ -427,8 +461,21 @@
   left: 25vw;
   transition: color 0.3s ease-out;
 }
+#portfolio h2::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background-color: #2B9941;
+  bottom: -20px;
+  left: 0;
+  transition: all 0.4s ease-out;
+}
 #portfolio h2:hover {
   color: #2B9941;
+}
+#portfolio h2:hover::after {
+  width: 90px;
 }
 @media screen and (max-width: 599px) {
   #portfolio h2 {
@@ -479,7 +526,7 @@
   height: 30vw;
   position: absolute;
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.4s ease-out;
 }
 @media screen and (max-width: 599px) {
   .portfolio--slider .portfolio--slider__imgs img {
@@ -600,7 +647,10 @@
   align-items: center;
   justify-content: space-between;
   font-family: "Mulish", sans-serif;
-  margin: 0 5vw 200px 5vw;
+  padding: 250px 400px 200px 400px;
+  width: 80%;
+  height: 600px;
+  position: relative;
 }
 @media screen and (max-width: 599px) {
   .portfolio--cards {
@@ -613,9 +663,10 @@
 }
 
 .portfolio--cards__wrapper {
-  height: 40vh;
-  width: 33%;
-  margin: 10vh 2vw;
+  height: auto;
+  width: 20%;
+  margin: 0;
+  position: absolute;
 }
 @media screen and (max-width: 599px) {
   .portfolio--cards__wrapper {
@@ -624,9 +675,22 @@
   }
 }
 
+.card--1 {
+  left: 0;
+}
+
+.card--2 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card--3 {
+  right: 0;
+}
+
 .card--number {
   position: absolute;
-  transition: all 200ms ease-out;
+  transition: opacity 0.4s ease-out;
   background-color: rgba(51, 51, 51, 0.671);
   width: 40px;
   height: 70px;
@@ -647,6 +711,7 @@
   justify-content: flex-start;
   position: relative;
   width: 100%;
+  transition: opacity 0.4s ease-out;
 }
 .portfolio--card img {
   max-width: 250px;
@@ -744,6 +809,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 60px;
+  transition: opacity 0.4s ease-out;
 }
 @media screen and (max-width: 599px) {
   .card--back {
@@ -858,6 +924,16 @@
   left: 25vw;
   transition: color 0.3s ease-out;
 }
+#testimonial h2::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background-color: #2B9941;
+  bottom: -20px;
+  left: 0;
+  transition: all 0.4s ease-out;
+}
 @media screen and (max-width: 599px) {
   #testimonial h2 {
     left: 50%;
@@ -867,6 +943,9 @@
 }
 #testimonial h2:hover {
   color: #2B9941;
+}
+#testimonial h2:hover::after {
+  width: 90px;
 }
 #testimonial p {
   padding-top: 20vh;
@@ -910,6 +989,8 @@
   padding: 0 40px;
   width: 40%;
   min-height: 30vh;
+  opacity: 0;
+  transition: all 3s ease-out;
 }
 @media screen and (max-width: 599px) {
   #testimonial .testimonial--quote .testimonial--quote1, #testimonial .testimonial--quote .testimonial--quote2 {
@@ -984,6 +1065,12 @@
   font-family: Trebuchet;
   font-weight: 900;
 }
+#testimonial .testimonial--quote .testimonial--quote1 {
+  transform: translateX(-9999px);
+}
+#testimonial .testimonial--quote .testimonial--quote2 {
+  transform: translateX(9999px);
+}
 
 .mockup {
   position: absolute;
@@ -1009,14 +1096,75 @@
   align-items: center;
   position: relative;
 }
+#competences #floating1 {
+  position: absolute;
+  width: 70px;
+  left: 15%;
+  top: 30%;
+  transform: translate(0) rotate(0);
+  animation: movingIcons 15s linear infinite 2s forwards;
+}
+#competences #floating2 {
+  position: absolute;
+  width: 70px;
+  left: 10%;
+  top: 70%;
+  transform: translate(0) rotate(0);
+  animation: movingIcons 15s linear infinite 1s forwards;
+}
+#competences #floating3 {
+  position: absolute;
+  width: 70px;
+  right: 10%;
+  top: 10%;
+  transform: translate(0) rotate(0);
+  animation: movingIcons 15s linear infinite forwards;
+}
+#competences #floating4 {
+  position: absolute;
+  width: 70px;
+  right: 5%;
+  top: 70%;
+  transform: translate(0) rotate(0);
+  animation: movingIcons 15s linear infinite 3s forwards;
+}
+#competences #floating5 {
+  position: absolute;
+  width: 70px;
+  left: 5%;
+  top: 10%;
+  transform: translate(0) rotate(0);
+  animation: movingIcons 10s linear infinite 0.5s forwards;
+}
+#competences #floating6 {
+  position: absolute;
+  width: 70px;
+  right: 10%;
+  top: 50%;
+  transform: translate(0) rotate(0);
+  animation: movingIcons 10s linear infinite 0.5s forwards;
+}
 #competences h2 {
   top: 15vh;
   position: absolute;
   left: 25vw;
   transition: color 0.3s ease-out;
 }
+#competences h2::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background-color: #2B9941;
+  bottom: -20px;
+  left: 0;
+  transition: all 0.4s ease-out;
+}
 #competences h2:hover {
   color: #2B9941;
+}
+#competences h2:hover::after {
+  width: 90px;
 }
 @media screen and (max-width: 599px) {
   #competences h2 {
@@ -1109,6 +1257,23 @@
   }
 }
 
+@keyframes movingIcons {
+  0% {
+    transform: translate(0) rotate(0);
+  }
+  25% {
+    transform: translate(150px, 100px) rotate(75deg);
+  }
+  50% {
+    transform: translate(100px, -50px) rotate(-90deg);
+  }
+  75% {
+    transform: translate(-150px, 50px) rotate(75deg);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
 #form {
   width: 100%;
   min-height: 100vh;
@@ -1120,14 +1285,45 @@
   position: relative;
   padding-bottom: 15vh;
 }
+#form .circle1 {
+  position: absolute;
+  width: 300px;
+  left: -100px;
+  top: -100px;
+  transform-origin: 50% 50%;
+  transform: rotate(0);
+  animation: circlesrotate 5s linear infinite forwards;
+}
+#form .circle2 {
+  position: absolute;
+  width: 300px;
+  left: -50px;
+  top: -90px;
+  transform-origin: 50% 50%;
+  transform: rotate(0);
+  animation: circlesrotate 10s linear infinite backwards 2s;
+}
 #form h2 {
   position: absolute;
   top: 15vh;
   left: 25vw;
   transition: color 0.3s ease-out;
 }
+#form h2::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background-color: #2B9941;
+  bottom: -20px;
+  left: 0;
+  transition: all 0.4s ease-out;
+}
 #form h2:hover {
   color: #2B9941;
+}
+#form h2:hover::after {
+  width: 90px;
 }
 @media screen and (max-width: 599px) {
   #form h2 {
@@ -1336,7 +1532,7 @@
   justify-content: center;
 }
 .contactDetails .contactDetails--logo img {
-  width: 30px;
+  width: 80px;
 }
 .contactDetails .contactDetails--details {
   border-radius: 5px;
@@ -1363,6 +1559,14 @@
   }
 }
 
+@keyframes circlesrotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 *,
 *::before,
 *::after {

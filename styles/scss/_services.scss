@@ -8,13 +8,25 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    .cubicshapes{
+        position: absolute;
+        left: -200px;
+        top: 40%;
+        transform-origin: 50% 50%;
+        transform: rotate(0) scale(1);
+        animation: cubicRotate 40s linear infinite backwards;
+    }
     h2{
         top: 15vh;
         position: absolute;
         left: 25vw;
         transition: color .3s ease-out;
+        @include afterBar;
         &:hover{
            color: $colorMediumGreen; 
+        }
+        &:hover::after{
+            width: 90px;
         } 
         @include mobile-only{
             left: 50%;
@@ -132,4 +144,15 @@
         }
     }
     
+}
+@keyframes cubicRotate {
+    0%{
+        transform: rotate(0) scale(1);
+    }
+    50%{
+        transform: rotate(-180deg)  scale(1.4);
+    }
+    100%{
+        transform: rotate(-360deg) scale(1);
+    }
 }
