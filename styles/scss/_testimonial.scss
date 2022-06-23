@@ -10,14 +10,17 @@
     position: relative;
     h2{
         position: absolute;
-        top: 10vh;
-        left: 25vw;
+        top: 100px;
+        left: 300px;
         transition: color .3s ease-out;
         @include afterBar;
         @include mobile-only{
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
+        }
+        @include tablettes-only{
+            left: 10%;
         }
         &:hover{
            color: $colorMediumGreen; 
@@ -41,6 +44,11 @@
             text-align: justify;
             padding-left: 0;
         }
+        @include tablettes-only{
+            max-width: 80vw;
+            text-align: left;
+            padding-bottom: 20px;
+        }
     }
     .testimonial--quote{
         margin: 0 20vw;
@@ -55,18 +63,28 @@
             width: 100vw;
             align-items: flex-start;
         }
+        @include tablettes-only{
+            flex-wrap: nowrap;
+            width: 100vw;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
         .testimonial--quote1, .testimonial--quote2{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 0 40px; 
+            padding: 0 40px 20px 40px; 
             width: 40%;
             min-height: 30vh;
             opacity: 0;
             transition: all 3s ease-out;
             @include mobile-only{
                 width: 100%;
+            }
+            @include tablettes-only{
+                width: 100%;
+                padding-bottom: 60px;
             }
             .quote--link{
                 padding-left: 5vw;
@@ -76,10 +94,10 @@
                 justify-content: content;
                 align-items: center;
             }   
-            h4{
+            cite{
                 font-family: 'Mulish', sans-serif;
-                font-weight: 900;
-                font-size: 25px;
+                font-weight: 400;
+                font-size: 21px;
                 position: relative;
                 text-align: center;
                 width: 80%;
@@ -148,8 +166,9 @@
     padding: 0 10vw;
     @include mobile-only{
         right: 0;
-        width: 180px;
+        width: 160px;
         height: auto;
-        padding: 0 5vw;
+        padding: 0 10px;
+        top: -50px;
     }
 }

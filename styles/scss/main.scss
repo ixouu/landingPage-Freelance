@@ -3,32 +3,33 @@
 *::after {
   box-sizing: border-box;
 }
- 
-body{
-margin: 0;
-padding: 0;
-font-family: 'Tinos', serif;
-color: $colorText;
-font-size: 20px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tinos', serif;
+  color: $colorText;
+  font-size: 20px;
+  overflow-x: hidden;
 }
+
 html {
-    scroll-behavior: smooth;
-  }
-//Footer
-footer{
-    width: 100%;
-    min-height: 10vh;
-    background-color: rgb(26, 26, 26);
-    color: white;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .footer--legalterms{
-        padding-left: 10px;
-        color: #f1f1f1;
-    }
+  scroll-behavior: smooth;
 }
 
+//Footer
+footer {
+  width: 100%;
+  min-height: 10vh;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
+  .footer--legalterms {
+    padding-left: 10px;
+    color: #f1f1f1;
+  }
+}

@@ -14,6 +14,9 @@
         top:30%;
         transform: translate(0) rotate(0);
         animation: movingIcons 15s linear infinite 2s forwards;
+        @include mobile-only{
+            opacity: 0;
+        }
     }
     #floating2{
         position: absolute;
@@ -22,6 +25,9 @@
         top:70%;
         transform: translate(0) rotate(0);
         animation: movingIcons 15s linear  infinite 1s forwards;
+        @include mobile-only{
+            opacity: 0;
+        }
     }
     #floating3{
         position: absolute;
@@ -30,6 +36,9 @@
         top:10%;
         transform: translate(0) rotate(0);
         animation: movingIcons 15s linear  infinite forwards;
+        @include mobile-only{
+            opacity: 0;
+        }
     }
     #floating4{
         position: absolute;
@@ -38,6 +47,9 @@
         top:70%;
         transform: translate(0) rotate(0);
         animation: movingIcons 15s linear  infinite 3s forwards;
+        @include mobile-only{
+            opacity: 0;
+        }
     }
     #floating5{
         position: absolute;
@@ -46,6 +58,9 @@
         top:10%;
         transform: translate(0) rotate(0);
         animation: movingIcons 10s linear  infinite .5s forwards;
+        @include mobile-only{
+            opacity: 0;
+        }
     }
     #floating6{
         position: absolute;
@@ -54,12 +69,16 @@
         top:50%;
         transform: translate(0) rotate(0);
         animation: movingIcons 10s linear  infinite .5s forwards;
+        @include mobile-only{
+            opacity: 0;
+        }
     }
     h2{
-        top: 15vh;
+        top: 100px;
         position: absolute;
         left: 25vw;
         transition: color .3s ease-out;
+        z-index: 3000;
         @include afterBar;
         &:hover{
            color: $colorMediumGreen; 
@@ -71,10 +90,15 @@
             left: 50%;
             transform: translateX(-50%);
             top: 100px;
+            width: 100%;
+            text-align: center;
         }
     }
     h3{
         font-family: 'Mulish', sans-serif;
+        @include mobile-only{
+            text-align: center;
+        }
     }
     .competences--articles{
         padding: 300px 0 40px 0;
@@ -82,23 +106,29 @@
         width: 50vw;
         text-align: center;
         padding-bottom: 5vh;
+        z-index: 3000;
         :nth-child(1){
             padding-bottom: 40px;
         }
         @include mobile-only{
-            padding: 200px 0 40px 0;
+            padding: 250px 0 40px 0;
             font-size: 18px;
             width: 80vw;
             margin-top: 10px;
             word-spacing: .1rem;
-            text-align: justify;
+            line-height: 1.5rem;
+        }
+        @include tablettes-only{
+            text-align: left;
+            width: 80vw;
         }
     }
     .compentences--hardSkills{
         display: flex;
         align-items: center;
-        padding-bottom: 5vh;
+        padding:0 0 5vh 0;
         flex-wrap: wrap;
+        z-index: 3000;
         @include mobile-only{
             justify-content: center;
             padding-left: 0;
@@ -107,6 +137,10 @@
             @include mobile-only{
                 width: 100px;
                 margin: 10px;
+            }
+            @include tablettes-only{
+                width: 85px;
+                margin: 10px
             }
         }
     }
@@ -122,9 +156,16 @@
     .compentences--softSkills{
         display: flex;
         flex-direction: row;
+        padding: 0;
         @include mobile-only{
             flex-direction: column;
             align-items: flex-start;
+            width: 100%;
+        }
+        @include tablettes-only{
+            flex-direction: column;
+            align-items: left;
+            justify-content : center;
             width: 100%;
         }
     }
@@ -135,10 +176,14 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+        width: 100%;
         @include mobile-only{
             padding: 0;
         }
-
+        @include tablettes-only{
+            justify-content: left;
+            margin-left: 30%;
+        }
         img{
             width: 100px;
             margin-right: 10px;
