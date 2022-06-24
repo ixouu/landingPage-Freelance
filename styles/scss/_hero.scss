@@ -128,6 +128,9 @@
     background-color: $colorBlueTransparent;
     z-index: 5000;
     transition: all 200ms ease-in;
+    @include mobile-only {
+        background-color: transparent;
+    }
 }
 
 .navTransition {

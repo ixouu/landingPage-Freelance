@@ -129,6 +129,11 @@
   z-index: 5000;
   transition: all 200ms ease-in;
 }
+@media screen and (max-width: 599px) {
+  .isFixed {
+    background-color: transparent;
+  }
+}
 
 .navTransition {
   transform: scale(0.9);
@@ -826,12 +831,13 @@
 .portfolio--cards {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-family: "Mulish", sans-serif;
   padding: 250px 400px 200px 400px;
-  width: 80%;
+  width: 60%;
   height: 600px;
   position: relative;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 599px) {
   .portfolio--cards {
@@ -857,7 +863,6 @@
 
 .portfolio--cards__wrapper {
   height: auto;
-  width: 20%;
   margin: 0;
   position: absolute;
 }
@@ -891,7 +896,7 @@
 
 .card--number {
   position: absolute;
-  transition: opacity 0.4s ease-out;
+  transition: all 0.4s ease-out;
   background-color: rgba(51, 51, 51, 0.671);
   width: 40px;
   height: 70px;
@@ -911,11 +916,12 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  width: 100%;
+  width: 300px;
+  height: 500px;
   transition: opacity 0.4s ease-out;
 }
 .portfolio--card img {
-  max-width: 250px;
+  width: 250px;
   border-radius: 5px;
   transition: all 400ms ease-out;
   transform: scale(1);
@@ -923,7 +929,7 @@
 }
 @media screen and (max-width: 599px) {
   .portfolio--card img {
-    max-width: 125px;
+    width: 125px;
     position: absolute;
     top: -20%;
   }
@@ -932,7 +938,7 @@
   position: absolute;
 }
 .portfolio--card:hover .card--img {
-  transform: translateY(-20%) scale(0.9);
+  transform: translateY(-10%) scale(0.9);
 }
 @media screen and (max-width: 599px) {
   .portfolio--card:hover .card--img {
@@ -949,6 +955,7 @@
 }
 .portfolio--card:hover .portfolio--card__bg {
   transform: scale(1.3, 0.8);
+  height: 600px;
 }
 @media screen and (max-width: 599px) {
   .portfolio--card:hover .portfolio--card__bg {
@@ -963,7 +970,7 @@
 .portfolio--card:hover .card--back {
   opacity: 1;
   position: relative;
-  transform: translateY(-60%);
+  transform: translateY(-40%);
 }
 @media screen and (max-width: 599px) {
   .portfolio--card:hover .card--back {
@@ -1012,6 +1019,8 @@
   font-size: 18px;
   font-weight: 700;
   padding: 10px 0;
+  width: 100%;
+  text-align: center;
 }
 
 .card--front__details {
@@ -1034,7 +1043,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 @media screen and (max-width: 599px) {
   .card--back {
@@ -1060,7 +1069,6 @@
   display: flex;
   position: relative;
   text-align: center;
-  justify-content: center;
   width: 100%;
 }
 .back--details .categorie--detail {
@@ -1073,6 +1081,7 @@
   display: inline-block;
   font-weight: 700;
   font-size: 20px;
+  padding-bottom: 20px;
 }
 .back--details .back-details__date {
   width: 100%;
@@ -1110,7 +1119,6 @@
   color: #f1f1f1;
   border-radius: 5px;
   background-color: #2B9941;
-  margin: 20px 0;
 }
 @media screen and (max-width: 599px) {
   .back--link {
@@ -1129,7 +1137,8 @@
   background-color: #10141B;
   z-index: 1;
   transform: scale(1, 1);
-  min-width: 250px;
+  width: 100%;
+  min-width: 300px;
 }
 @media screen and (max-width: 599px) {
   .portfolio--card__bg {
@@ -1196,12 +1205,12 @@
   width: 90px;
 }
 #testimonial p {
-  padding-top: 20vh;
+  padding-top: 300px;
   padding-left: 5vw;
   font-size: 25px;
   max-width: 40vw;
   text-align: center;
-  padding-bottom: 5vh;
+  padding-bottom: 20px;
 }
 @media screen and (max-width: 599px) {
   #testimonial p {
@@ -1345,7 +1354,7 @@
   position: absolute;
   top: -133px;
   right: 0;
-  padding: 0 10vw;
+  padding-right: 30px;
 }
 @media screen and (max-width: 599px) {
   .mockup {
@@ -1447,7 +1456,7 @@
 #competences h2 {
   top: 100px;
   position: absolute;
-  left: 25vw;
+  left: 300px;
   transition: color 0.3s ease-out;
   z-index: 3000;
 }
@@ -1493,7 +1502,7 @@
 #competences .competences--articles {
   padding: 300px 0 40px 0;
   font-size: 25px;
-  width: 50vw;
+  max-width: 40vw;
   text-align: center;
   padding-bottom: 5vh;
   z-index: 3000;

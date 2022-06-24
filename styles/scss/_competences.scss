@@ -76,7 +76,7 @@
     h2{
         top: 100px;
         position: absolute;
-        left: 25vw;
+        left: 300px;
         transition: color .3s ease-out;
         z-index: 3000;
         @include afterBar;
@@ -103,7 +103,7 @@
     .competences--articles{
         padding: 300px 0 40px 0;
         font-size: 25px;
-        width: 50vw;
+        max-width: 40vw;
         text-align: center;
         padding-bottom: 5vh;
         z-index: 3000;

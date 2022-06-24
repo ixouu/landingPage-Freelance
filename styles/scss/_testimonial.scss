@@ -30,12 +30,12 @@
         } 
     }
     p{
-        padding-top: 20vh;
+        padding-top: 300px;
         padding-left: 5vw ;
         font-size: 25px;
         max-width: 40vw;
         text-align: center;
-        padding-bottom: 5vh;
+        padding-bottom: 20px;
         @include mobile-only{
             font-size: 18px;
             width: 80vw;
@@ -163,7 +163,8 @@
     position: absolute;
     top: -133px;
     right: 0;
-    padding: 0 10vw;
+    padding-right: 30px;
+
     @include mobile-only{
         right: 0;
         width: 160px;

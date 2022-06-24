@@ -156,10 +156,12 @@ function fixedNav() {
   if (window.scrollY >= servicesTop) {    
     navBar.classList.add('isFixed');
     navMenu.classList.add('navTransition');
+    iconMobile.classList.add('isFixed');
     logo.style.opacity = "0"
   } else if(window.scrollY <= heroTop){
     navBar.classList.remove('isFixed');
     navMenu.classList.remove('navTransition');
+    iconMobile.classList.remove('isFixed');
     logo.style.opacity = "1"
   }
 }
