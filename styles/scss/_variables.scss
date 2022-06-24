@@ -1,17 +1,32 @@
-$colorBackground-1 : #10141B;
-$colorBackground_2 : #1B212C;
-$colorNavOnScroll : #151C28;
-$colorCardBackground : #1d3152;
-$colorOverlay : #1d3152;
-$colorBlueTransparent : #1d3152e5;
-$colorText : #F1F1F1;
-$colorText_2 : #CFD6E3;
-$colorDarkGreen : #195926;
-$colorMediumGreen : #2B9941;
-$colorLightGreen : #36C252;
+$colorBackground-1 : #F2F2F2;
+$colorBackground_2 : #e0dff7;
+$colorNavOnScroll : #F2A649;
+$colorNavOnScrollLighter: #f2a649d3;
+$colorCardBackground : #30BFB1;
+$colorOverlay :#8582e4de;
+$colorBlueTransparent : #716df2ee;
+$colorText : #333;
+$colorText_2 : #F2A649;
+$colorText_3 : #F2F2F2;
+$colorDarkGreen : #716DF2;
+$colorMediumGreen : #8985F2;
+$colorLightGreen : #8682e4;
+$colorBigNumber: #4d489b;
 
 $breakpoints: (
   mobile: 599px,
   tablettes : 900px,
-  desktop : 1200px
+  desktop : 1440px
 );
+
+// $colorBackground-1 : #10141B;
+// $colorBackground_2 : #1B212C;
+// $colorNavOnScroll : #151C28;
+// $colorCardBackground : #1d3152;
+// $colorOverlay : #1d3152;
+// $colorBlueTransparent : #1d3152e5;
+// $colorText : #F1F1F1;
+// $colorText_2 : #CFD6E3;
+// $colorDarkGreen : #195926;
+// $colorMediumGreen : #2B9941;
+// $colorLightGreen : #36C252;

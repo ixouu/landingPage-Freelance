@@ -8,7 +8,15 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-bottom: 15vh;
+    padding-bottom: 200px;
+    background-image: url(/assets/images/shape2.webp);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: auto;
+    @include mobile-only{
+        background-size: 120%, 40%;
+    }
+
     .circle1{
         position: absolute;
         width: 300px;
@@ -40,32 +48,11 @@
         }
     }
     h2{
-        position: absolute;
-        top: 100px;
-        left: 300px;
-        transition: color .3s ease-out;
-        @include afterBar;
-        &:hover{
-           color: $colorMediumGreen; 
-        }
-        &:hover::after{
-            width: 90px;
-        }   
-        @include mobile-only{
-            left: 50%;
-            transform: translateX(-50%);
-            top: 100px;
-            width: 100%;
-            text-align: center;
-        }
-        @include tablettes-only{
-            left: 10%;
-        }
+        @include h2;
     }
     .form--paragraphs{
-        padding-left: 5vw ;
         font-size: 25px;
-        width: 50vw;
+        width: 40vw;
         text-align: center;
         padding-bottom: 5vh;
         @include mobile-only{
@@ -123,7 +110,7 @@
             }
         }
         fieldset{
-            border-color: $colorDarkGreen;
+            border-color: $colorNavOnScrollLighter;
             margin: 10px 0;
         }
         legend{
@@ -131,7 +118,7 @@
             padding: 15px;
             border-radius: 5px;
             font-family: 'Mulish', sans-serif;
-
+            color: $colorText_3;
         }
         label{
             font-size: 18px;
@@ -142,7 +129,7 @@
             background-color: $colorBackground_2;
             border: none;
             border-bottom: 1px solid $colorDarkGreen;
-            color: white;
+            color: $colorText;
             font-size: 18px;
             border-radius: 5px;
             padding: 10px;
@@ -210,20 +197,23 @@
         margin-top: 40px;
         width: 250px;
         height: 80px;
-        color: white;
-        background-color: $colorLightGreen;
+        color: $colorText;
+        background-color: $colorNavOnScrollLighter;
         border: none;
         border-radius: 5px;
         font-size: 20px;
         transition : all .3s ease-out;
+        font-weight: 900;
         &:hover{
             background-color: $colorMediumGreen;
+            color: $colorText_3;
         }
         @include mobile-only{
             width: 150px;
             height: 65px;
             font-size: 16px;
             margin-bottom: 20px;
+            margin-left: 20%;
         }
     }
 }
@@ -242,20 +232,20 @@
         margin: 150px 10px 40px 10px;
     }
     @include tablettes-only{
-        top: -6.5%;
+        top: 0;
     }
     .contactDetails--wrapper{
         position: relative;
         margin: 15px 0;
         @include mobile-only{
-            min-width: 250px;
+            max-width: 90%;
         }
         @include tablettes-only{
             min-width: 300px;
         }
     }
     .contactDetails--logo {
-        border: 4px solid $colorDarkGreen;
+        border: 2px solid $colorDarkGreen;
         border-radius: 50%;
         background-color: $colorBackground_1;
         position: absolute;
@@ -272,14 +262,13 @@
     }
     .contactDetails--details{
         border-radius: 5px;
-        border: 4px solid $colorDarkGreen;
+        border: 2px solid $colorDarkGreen;
         height: 50px;
         display: flex;
         align-items: center;
         overflow: hidden;
         
         span, a{
-            background-color: $colorDarkGreen;
             display: block;
             border-radius: 5px;
             padding: 3px 10px 3px 40px;
@@ -287,7 +276,8 @@
             min-width: 260px;
             text-align: center;
             text-decoration: none;
-            color: #f1f1f1;
+            color: $colorDarkGreen;
+            font-weight: 700;
             @include mobile-only{
                 min-width: 300px;
             }

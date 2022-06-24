@@ -8,38 +8,12 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    .cubicshapes{
-        position: absolute;
-        left: -200px;
-        top: 40%;
-        transform-origin: 50% 50%;
-        transform: rotate(0) scale(1);
-        animation: cubicRotate 40s linear infinite backwards;
-        @include mobile-only{
-            width: 150px;
-            left: -75px;
-            top: 20%;
-        }
-    }
+    @include backgroundIcon;
+    background-position: center right;
     h2{
-        top: 100px;
-        position: absolute;
-        left: 300px;
-        transition: color .3s ease-out;
-        @include afterBar;
-        &:hover{
-           color: $colorMediumGreen; 
-        }
-        &:hover::after{
-            width: 90px;
-        } 
+        @include h2;
         @include mobile-only{
-            left: 50%;
-            transform: translateX(-50%);
             top: 100px;
-        }
-        @include tablettes-only{
-            left: 10%;
         }
     }
 }
@@ -70,11 +44,6 @@
         @include tablettes-only{
             padding: 0 10%;
         }
-        .service--icons{
-            transform-origin: 50% 50%;
-            transform : rotate(0);
-            animation: iconsRotate ease-in-out 10s infinite forwards;
-        }
     }
     p{
         text-align: center;
@@ -95,12 +64,14 @@
 .services--description{
     padding-top: 100px;
     z-index: 1000;
+    @include mobile-only{
+        padding: 20px 0 40px 0;
+    }
     p{
         max-width: 40vw;
         font-size: 25px;
-        color : $colorText_2;
+        color : $colorText;
         @include mobile-only{
-            padding: 20px 0 40px 0;
             max-width: 80vw;
             margin: 0 20px;
             font-size: 18px;
@@ -127,8 +98,8 @@
     @include tablettes-only{
         flex-direction: column;
     }
-    .bigNumber::-webkit-scrollbar, h4::-webkit-scrollbar, p::-webkit-scrollbar{
-        display: none;
+    .bigNumber, h4, p{
+        overflow: hidden;
     }
     .shortDescription--containerWrapper{
         width: 100%;
@@ -136,7 +107,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        overflow-x: hidden;
+        overflow: hidden;
 
 
         .services--shortDescription__container{
@@ -150,7 +121,7 @@
             margin-top: 7vh;
 
             .bigNumber{
-                color : $colorText_2;
+                color : $colorBigNumber ;
                 font-size: 140px;
                 position: absolute;
                 top: -230px;
@@ -160,7 +131,8 @@
             }
             h3, p{
                 padding: 0 20px;
-                overflow: scroll;
+                overflow: hidden;
+                color : $colorText_3;
             }
             h3{
                 padding-top: 25%;

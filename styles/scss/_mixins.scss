@@ -1,13 +1,39 @@
-@mixin fontTitle{
-    font-family: 'Mulish', sans-serif;
-    font-weight: 900;
+@mixin h2{
+  top: 100px;
+  position: absolute;
+  left: 25%;
+  transition: color .3s ease-out;
+  color: $colorText_2;
+  font-weight: 700;
+  font-family: 'Mulish', sans-serif;
+  @include afterBar;
+  @include mobile-only{
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50px;
+      width: 100%;
+      text-align: center;
+  }
+  @include tablettes-only{
+      left: 10%;
+  }
+  &:hover{
+    color: $colorText_2; 
+ }
+ &:hover::after{
+     width: 90px;
+ }
+
 };
 @mixin tablettes-only { 
     @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width : map-get($breakpoints, desktop)) { 
       @content 
     } 
   };
-
+@mixin backgroundIcon{
+  background-image: url(/assets/images/shape1.webp);
+  background-repeat: no-repeat;
+}
 @mixin mobile-only { 
     @media screen and (max-width : map-get($breakpoints, mobile)) { 
       @content 

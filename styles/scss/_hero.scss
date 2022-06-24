@@ -30,7 +30,7 @@
         left: 10%;
         top: 40%;
         transform: translateY(-50%);
-        @include fontTitle;
+        color : $colorText_3;
         opacity: 1;
 
         @include mobile-only {
@@ -72,10 +72,9 @@
     .scrollIndicator {
         width: 100%;
         height: 6px;
-        background: linear-gradient(to right, $colorLightGreen, $colorDarkGreen );
+        background: linear-gradient(to right, $colorText_2, $colorNavOnScrollLighter );
         position: absolute;
-        display: block;
-        z-index: 4000;
+        z-index: 5000;
         top: 0;
         transform-origin: left;
         transform: scaleX(0);
@@ -83,11 +82,12 @@
     }
 
     img {
-        width: 100px;
-        top: 0;
+        top: 5px;
         left: 10%;
         position: absolute;
         z-index: 2000;
+        border-radius: 5px;
+        width: 250px;
 
         @include tablettes-only {
             opacity: 0;
@@ -102,7 +102,6 @@
         flex-wrap: wrap;
         transition: all 200ms ease-in;
         width: 100%;
-
         li {
             list-style: none;
             padding: 0 2%;
@@ -110,12 +109,12 @@
 
         a {
             text-decoration: none;
-            color: $colorText;
-            font-size: 20px;
+            color : $colorText_3 ;
+            font-size: 24px;
         }
 
         .isVisible {
-            color: $colorLightGreen;
+            color: $colorText_2;
             font-weight: bold;
         }
     }
@@ -128,8 +127,11 @@
     background-color: $colorBlueTransparent;
     z-index: 5000;
     transition: all 200ms ease-in;
+    @include tablettes-only{
+        border-radius: 50%;
+    }
     @include mobile-only {
-        background-color: transparent;
+        border-radius: 50%;
     }
 }
 
@@ -151,6 +153,7 @@
         padding: 0;
         bottom: -100px;
         z-index: 1;
+        min-height: 100px;
     }
 
     @include tablettes-only {
@@ -166,7 +169,10 @@
         flex-direction: column;
         align-items: center;
         text-decoration: none;
-        color: $colorText;
+        color: $colorText_3;
+        @include mobile-only{
+            justify-content: center;
+        }
 
         h2 {
             margin-top: 40px;
@@ -177,7 +183,7 @@
 
             @include mobile-only {
                 margin-top: 20px;
-                font-size: 18px;
+                font-size: 14px;
                 text-align: center;
             }
 
@@ -196,7 +202,7 @@
 
             @include mobile-only {
                 margin: 15px;
-                font-size: 16px;
+                font-size: 10px;
             }
 
             @include tablettes-only {
@@ -276,10 +282,25 @@
     left: 0;
     height: calc(100vh - 50px);
     width: 100vw;
+    list-style: none;
+    z-index: 6000;
 
     li {
         text-decoration: none;
         padding: 10px 20px;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        &::after{
+            content : '';
+            position: absolute;
+            width: 175px;
+            height: 1px;
+            background-color: $colorNavOnScroll ;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         
     }
 
